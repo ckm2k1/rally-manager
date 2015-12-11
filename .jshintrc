@@ -73,6 +73,7 @@
     "worker"        : false,    // Web Workers
     "wsh"           : false,    // Windows Scripting Host
     "yui"           : false,    // Yahoo User Interface
+    "mocha"         : true,
 
     // Legacy
     "nomen"         : false,    // true: Prohibit dangling `_` in variables
@@ -81,14 +82,5 @@
     "white"         : false,    // true: Check against strict whitespace and indentation rules
 
     // Custom Globals
-    "predef"        : [ "describe"
-                       , "jasmine"
-                       , "spyOn"
-                       , "expect"
-                       , "describe"
-                       , "it"
-                       , "Backbone"
-                       , "Handlebars"
-                       , "_"
-                       ]       // additional predefined global variables
+    "predef"        : []       // additional predefined global variables
 }

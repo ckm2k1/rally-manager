@@ -2,9 +2,14 @@
   "folders": [{
     "path": ".",
     "folder_exclude_patterns": [
-      "node_modules"
+      "node_modules",
+      "dist"
     ],
-    "file_exclude_patterns": []
+    "file_exclude_patterns": [
+      "*.js.map",
+      ".tern-project",
+      ".tern-port"
+    ]
   }],
   "settings": {
     "tab_size": 2,
