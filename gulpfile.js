@@ -21,6 +21,7 @@ gulp.task('build', ['clean'], function() {
     .pipe(sourcemaps.init())
     .pipe(babel({
       presets: ['es2015']
+      // plugins: ['transform-runtime']
     }))
     .on('error', function(e) {
       console.log(e);
