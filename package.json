@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "",
+    "run": "node --harmony --harmony_modules --harmony_destructuring --harmony_rest_parameters --harmony_arrow_functions --harmony_spreadcalls --harmony_object --harmony_default_parameters lib/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "babel-runtime": "^6.3.13",
     "backbone": "^1.2.3",
     "cli-spinner": "^0.2.1",
+    "cli-table": "^0.3.1",
     "colors": "^1.1.2",
     "commander": "^2.9.0",
     "inquirer": "^0.11.0",
