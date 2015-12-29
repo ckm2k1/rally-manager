@@ -9,22 +9,6 @@ describe('Model', function() {
     return new child(...args);
   }
 
-  function inherit(superConstructor, ...protos) {
-    function S(...args) {
-      return Reflect.construct(superConstructor, args, new.target);
-    }
-
-    protos.forEach((proto) => {
-      Object.setPrototypeOf(proto, superConstructor.prototype)
-      Object.assign(S.prototype, proto);
-    });
-    Object.setPrototypeOf(S.prototype, superConstructor.prototype);
-    Object.setPrototypeOf(S, superConstructor);
-
-    class Child extends S {};
-    return Child;
-  }
-
   it('should apply defaults', function() {
     let child = class extends Model {
       get defaults() {
