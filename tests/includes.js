@@ -1,8 +1,9 @@
 'use strict';
 global.chai = require('chai');
+global.sinon = require('sinon');
 global.chaiSinon = require('sinon-chai');
-global.expect = chai.expect;
-global.chai.use(chaiSinon);
+global.expect = global.chai.expect;
+global.chai.use(global.chaiSinon);
 
 function inherit(superConstructor, ...protos) {
     function S(...args) {

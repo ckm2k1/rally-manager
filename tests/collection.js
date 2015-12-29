@@ -2,7 +2,7 @@
 var Collection = require('../lib/collections/collection');
 var Base = require('../lib/models/base');
 
-describe.only('Collection', function () {
+describe('Collection', function () {
 
   it('should accept an array of json models and instanciate them', function () {
     let models = [{a: 'abc'}, {a: 123}, {a: 'xyz'}];

@@ -82,5 +82,8 @@
     "white"         : false,    // true: Check against strict whitespace and indentation rules
 
     // Custom Globals
-    "predef"        : []       // additional predefined global variables
+    "predef"        : [
+        "expect",
+        "sinon"
+    ]       // additional predefined global variables
 }
