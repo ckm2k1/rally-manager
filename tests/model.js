@@ -1,9 +1,5 @@
 /*jshint expr:true*/
 'use strict';
-let chai = require('chai');
-let chaiSinon = require('sinon-chai');
-let expect = chai.expect;
-chai.use(chaiSinon);
 let Model = require('../lib/models/base');
 let util = require('util');
 
@@ -93,6 +89,13 @@ describe('Model', function() {
   it('should return it\'s collection name', function () {
     class Story extends Model {}
     expect(Story.collectionName).to.equal('Stories');
+  });
+
+  it('should return an object with the attributes', function () {
+    let attrs = {a: 'abc', b: 123, c: false};
+    let m = new Model(attrs);
+
+    expect(m.toJSON()).to.deep.equal(attrs);
   });
 
 });
