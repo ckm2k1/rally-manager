@@ -5,11 +5,28 @@ let chaiSinon = require('sinon-chai');
 let expect = chai.expect;
 chai.use(chaiSinon);
 let Model = require('../lib/models/base');
+let util = require('util');
 
 describe('Model', function() {
   function getModel(...args) {
     let child = class Child extends Model {};
     return new child(...args);
+  }
+
+  function inherit(superConstructor, ...protos) {
+    function S(...args) {
+      return Reflect.construct(superConstructor, args, new.target);
+    }
+
+    protos.forEach((proto) => {
+      Object.setPrototypeOf(proto, superConstructor.prototype)
+      Object.assign(S.prototype, proto);
+    });
+    Object.setPrototypeOf(S.prototype, superConstructor.prototype);
+    Object.setPrototypeOf(S, superConstructor);
+
+    class Child extends S {};
+    return Child;
   }
 
   it('should apply defaults', function() {
@@ -71,6 +88,11 @@ describe('Model', function() {
     expect(m.get('a')).to.equal('xyz');
     expect(m.get('b')).to.equal('def');
     expect(m.get('c')).to.equal(123);
+  });
+
+  it('should return it\'s collection name', function () {
+    class Story extends Model {}
+    expect(Story.collectionName).to.equal('Stories');
   });
 
 });
