@@ -9,7 +9,7 @@
 2. `cd rally-manager`
 3. `npm install`
 3. `chmod +x ./bin/rl.sh`
-4. `rl.sh --help` or `npm run`
+4. `rl.sh --help` or `npm run-scripts run`
 
 On the first run you'll be prompted for your rally username and password which will be stored
 in a file called .rallyrc in your home directory.
