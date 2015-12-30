@@ -40,7 +40,7 @@ let Queryable = proxyquire('../lib/queryable', {
   // }
 });
 
-describe.only('Queryable', function() {
+describe('Queryable', function() {
   let options = {
     config: {
       project: 123123123
